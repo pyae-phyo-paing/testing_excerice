@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Object
+    </h1>
+
+    <script>
+        
+        let CarParkingList = {
+            something1 : "value1",
+            something2 : "value2"
+        }
+
+        let hotel = {
+            name : "ibis Style",
+            rooms : 70,
+            booked : 25,
+            gym : true,
+            roomType : ["Twin, Single , Family"],
+            checkroom : function(){
+                return this.rooms - this.booked
+            },
+            carparking : CarParkingList
+        }
+
+        document.write(`Hotel Name is ${hotel.name} ! <br>`);
+
+        let result = hotel.checkroom();
+        document.write(`Hotel room remains ${result} <br>`);
+        document.write(`Hotel is ${hotel.carparking}`);
+        console.log(hotel.carparking.something1);
+        
+    </script>
+</body>
+</html>
