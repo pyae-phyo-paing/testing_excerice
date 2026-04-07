@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Function Lessons</h2>
+
+    <script>
+        function fullName(){
+            document.write("My Name is Pyae Phyo Paing! <br>");
+        }
+
+        fullName();
+
+        function sum(one,two){
+            let result = one + two;
+            document.write(`Your result is = ${result}. <br>`);
+        }
+
+        sum(200,400);
+
+        function sub(num1 = 1000, num2 = 300){
+            document.write(`Your Number is = ${num1 - num2} <br>`);
+        }
+
+        sub();
+        sub(3000,1000);
+
+        function multi(num1,num2){
+            let result = num1 * num2;
+            return result;
+        }
+
+        let multiresult = multi(2,6);
+        document.write(`Your Multiresult is ${multiresult}. <br>`);
+    </script>
+</body>
+</html>
