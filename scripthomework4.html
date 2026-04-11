@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>You did it!</h1>
+
+    <script>
+        let screctNumber = 10;
+        let gamebox = prompt('Guss a number between 1 to 20!');
+        let trytime = 0;
+
+        while(gamebox != screctNumber){
+            if(gamebox > screctNumber){
+                alert('Your number is greater than Secret Number!');
+            }else{
+                alert('Your number is less than Secret Number!');
+            };
+            gamebox = prompt('Guss a number between 1 to 20');
+            trytime++
+        };
+        document.write(`You tried ${trytime} times!`);
+    </script>
+</body>
+</html>
