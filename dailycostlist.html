@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: blue;"">Daily Cost List</h1>
+
+    <form action="" name="costForm" style="text-align: center;">
+        <label for="date">Date</label>
+        <input type="date" name="date" id="">
+        <br><br>
+        <label for="item_name">Item Name</label>
+        <input type="text" name="item_name" id="">
+        <br><br>
+        <label for="fee">Fee</label>
+        <input type="text" name="fee" id="">
+        <br><br>
+        <button type="button" onclick="datareport()">Submit</button>
+    </form>
+    <br><br>
+    <table border="1" cellpadding="30" cellspacing="0" align="center">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Date</th>
+                <th>Item Name</th>
+                <th>Fee</th>
+            </tr>
+        </thead>
+        <tbody id="myBody">
+
+        </tbody>
+        <tfoot>
+            <th colspan="3">Total</th>
+            <td id="feeTotal"></td>
+        </tfoot>
+    </table>
+
+    <script>
+        var dataArray = [];
+
+        function datareport(){
+
+            let date = document.costForm.date.value;
+            let item_name = document.costForm.item_name.value;
+            let fee = document.costForm.fee.value;
+
+            let objectData = {
+                use_date : date,
+                use_item_name : item_name,
+                use_fee : fee,
+            };
+            // console.log(objectData);
+
+            dataArray.push(objectData);
+            // console.log(dataArray);
+            getData();
+
+        }
+
+        function getData(){
+            let totalFee = 0;
+            let tablerow = "";
+
+            for( i = 0; i < dataArray.length; i++){
+                let costFeeData = dataArray[i];
+                // console.log(costFeeData);
+
+                tablerow += `<tr>
+                    <td>${ i + 1 }</td>
+                    <td>${costFeeData.use_date}</td>
+                    <td>${costFeeData.use_item_name}</td>
+                    <td>${costFeeData.use_fee}</td>
+                    </tr>`
+                
+                totalFee += parseInt(costFeeData.use_fee);
+            }
+
+            document.getElementById("myBody").innerHTML = tablerow;
+            document.getElementById("feeTotal").textContent = totalFee;
+        }
+    </script>
+</body>
+</html>
